@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme (default when class="light" or no dark class) */
+:root {
+  --background: #f8f7fc;
+  --foreground: #1a1a2e;
+  --primary: #3A3078;
+  --accent: #3A3078;
+  --accent-hover: #483D8B;
+  --purple: #8A2BE2;
+  --muted: rgba(26, 26, 46, 0.65);
+  --border: rgba(26, 26, 46, 0.12);
+  --surface: #f0eef6;
+}
+
+/* Dark theme */
+.dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --primary: #3A3078;
+  --accent: #3A3078;
+  --accent-hover: #483D8B;
+  --purple: #8A2BE2;
+  --muted: rgba(255, 255, 255, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --surface: #0D0D0D;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Glass utilities - theme aware */
+.glass {
+  background: rgba(26, 26, 46, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.glass-card {
+  background: rgba(26, 26, 46, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.glass-card:hover {
+  border-color: rgba(26, 26, 46, 0.18);
+  background: rgba(26, 26, 46, 0.1);
+}
+.dark .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.glass-button {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Full-page gradient orbs - light mode (softer) */
+.theme-gradient-bg {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 15%, rgba(58, 48, 120, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 15% 65%, rgba(45, 91, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 88% 45%, rgba(138, 43, 226, 0.04) 0%, transparent 45%);
+}
+.dark .theme-gradient-bg {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 15%, rgba(58, 48, 120, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 15% 65%, rgba(45, 91, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 88% 45%, rgba(138, 43, 226, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse 80% 40% at 25% 25%, rgba(58, 48, 120, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 60% at 75% 85%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 5% 90%, rgba(45, 91, 255, 0.05) 0%, transparent 45%);
+}
+
+/* Section white/light background gradient - visible on all sections */
+.section-white-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(248, 247, 252, 0.2) 70%,
+    transparent 100%
+  );
+}
+.dark .section-white-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 40%,
+    transparent 100%
+  );
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
