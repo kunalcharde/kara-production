@@ -45,7 +45,7 @@ export function ApplyForm() {
     facebook: "",
     pageant: pageantParam,
   });
-  const [photos, setPhotos] = useState<FileList | null>(null);
+  const [, setPhotos] = useState<FileList | null>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "payment" | "success" | "error">("idle");
   const [error, setError] = useState("");
 

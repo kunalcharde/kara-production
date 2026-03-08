@@ -6,7 +6,6 @@ import { Founder } from "@/components/sections/Founder";
 import { Gallery } from "@/components/sections/Gallery";
 import { PastWinners } from "@/components/sections/PastWinners";
 import { Sponsors } from "@/components/sections/Sponsors";
-import { MediaCoverage } from "@/components/sections/MediaCoverage";
 import { CTA } from "@/components/sections/CTA";
 import { Contact } from "@/components/sections/Contact";
 
