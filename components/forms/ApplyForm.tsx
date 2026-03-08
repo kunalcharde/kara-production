@@ -10,19 +10,17 @@ import { Button } from "@/components/ui/Button";
 
 declare global {
   interface Window {
-    Razorpay: typeof import("razorpay").Razorpay & {
-      new (options: { key: string }): {
-        open: (options: {
-          order_id: string;
-          amount: number;
-          currency: string;
-          name: string;
-          email: string;
-          contact?: string;
-          handler: (response: unknown) => void;
-          prefill?: { name: string; email: string; contact: string };
-        }) => void;
-      };
+    Razorpay: new (options: { key: string }) => {
+      open: (options: {
+        order_id: string;
+        amount: number;
+        currency: string;
+        name: string;
+        email: string;
+        contact?: string;
+        handler: (response: unknown) => void;
+        prefill?: { name: string; email: string; contact: string };
+      }) => void;
     };
   }
 }
@@ -45,7 +43,7 @@ export function ApplyForm() {
     facebook: "",
     pageant: pageantParam,
   });
-  const [, setPhotos] = useState<FileList | null>(null);
+  const [photos, setPhotos] = useState<FileList | null>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "payment" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -311,6 +309,11 @@ export function ApplyForm() {
                   onChange={(e) => setPhotos(e.target.files)}
                   className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-background text-foreground font-sans focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-accent/20 file:text-accent"
                 />
+                {photos?.length ? (
+                  <span className="block mt-1 text-xs text-muted font-sans">
+                    {photos.length} file(s) selected
+                  </span>
+                ) : null}
               </label>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

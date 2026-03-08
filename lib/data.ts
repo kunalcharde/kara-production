@@ -116,6 +116,41 @@ export const services = [
   },
 ];
 
+export const achievements = {
+  sectionLabel: "By the numbers",
+  title: "Our Impact",
+  subtitle: "Kara Production has built platforms that empower and celebrate talent across India and beyond.",
+  cards: [
+    { label: "Pageants produced", icon: "award" },
+    { label: "Participants empowered", icon: "users" },
+    { label: "National reach", icon: "globe" },
+    { label: "Growing every year", icon: "trending-up" },
+  ],
+  footerText: "Join a community that celebrates confidence, culture, and creativity.",
+  footerHighlight: "confidence, culture, and creativity",
+};
+
+export const ventures = [
+  {
+    id: "1",
+    title: "Miss & Mrs Maharashtra",
+    description: "Regional platform celebrating elegance and leadership across Maharashtra.",
+    link: "https://www.missandmrsmaharashtra.com",
+  },
+  {
+    id: "2",
+    title: "Mrs India Supranational",
+    description: "National-level pageant selecting representatives for the international stage.",
+    link: "https://www.mrsindiasupranational.com",
+  },
+  {
+    id: "3",
+    title: "Mrs Supranational",
+    description: "International platform recognizing elegance and global representation.",
+    link: "https://www.mrssupranational.com",
+  },
+];
+
 export const founder = {
   name: "Mrs. Zoya Siraj Sheikh",
   role: "Entrepreneur, Pageant Titleholder, and Empowerment Advocate",
