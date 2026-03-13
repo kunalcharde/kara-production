@@ -44,7 +44,7 @@ export const pageants = [
     title: "Miss & Mrs Maharashtra",
     shortDescription:
       "Regional platform celebrating elegance and leadership.",
-    link: "https://www.missandmrsmaharashtra.com",
+    link: "https://missandmrsmaharashtra.org/",
     about:
       "Miss & Mrs Maharashtra is a prestigious state-level competition celebrating beauty, talent, intelligence, and leadership across Maharashtra.",
     gallery: [
@@ -135,7 +135,7 @@ export const ventures = [
     id: "1",
     title: "Miss & Mrs Maharashtra",
     description: "Regional platform celebrating elegance and leadership across Maharashtra.",
-    link: "https://www.missandmrsmaharashtra.com",
+    link: "https://missandmrsmaharashtra.org/",
   },
   {
     id: "2",
